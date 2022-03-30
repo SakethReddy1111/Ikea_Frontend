@@ -3,13 +3,11 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { FaGlobe } from "react-icons/fa";
 import { IoIosGlobe } from "react-icons/io";
 
 import './Footer.css';
 import FooterColumns from "./FooterColumns";
 import Button from "./Button";
-import Icon from '@mui/material/Icon';
 
 
 const Footer = () =>{
@@ -20,6 +18,22 @@ const Footer = () =>{
         "About IKEA":["This is IKEA","Working at IKEA","Newsroom","Sustainability","IKEA Stores","IKEA Restaurants","IKEA for Business"],
     }
 
+    const raiseFabClicked = () =>{
+        const url = 'https://www.facebook.com/IKEAIndia';
+        window.open(url, '_blank');
+    }
+    const raiseInstaClicked = () =>{
+        const url = 'https://www.instagram.com/accounts/login/?next=/ikea.india/';
+        window.open(url, '_blank');
+    }
+    const raiseTwitClicked = () =>{
+        const url = 'https://twitter.com/IKEAIndia';
+        window.open(url, '_blank');
+    }
+    const raiseYouClicked = () =>{
+        const url = 'https://www.youtube.com/channel/UClQOVyyaLLXOx4YrpQLE01g';
+        window.open(url, '_blank');
+    }
 
    
     return (
@@ -36,16 +50,16 @@ const Footer = () =>{
          </div>
          <div className="footbox2">
              <div className="footIcons hover">
-               <div>
+               <div onClick={raiseFabClicked}>
                <p><FaFacebook /></p>
                </div>
-               <div>
+               <div onClick={raiseInstaClicked}>
                 <p><FaInstagram/></p>
                </div>
-               <div>
+               <div onClick={raiseTwitClicked}>
                 <p><FaTwitter/></p>
                </div>
-               <div>
+               <div onClick={raiseYouClicked}>
                 <p><FaYoutube/></p>
                </div>
              </div>
