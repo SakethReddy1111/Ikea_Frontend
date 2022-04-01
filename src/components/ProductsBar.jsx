@@ -1,9 +1,10 @@
 import React from 'react'
+import ProductSideBar from "../components/Products/ProductSideBar"
 import styled from "styled-components"
 
 
 const OptionsDiv = styled.div`
-    width: 85%;
+    width: 87%;
     margin-left:9%;
     height: 30px;
     background-color: white;
@@ -18,13 +19,18 @@ const OptionsDiv = styled.div`
     p:hover{
         text-decoration: underline;
     }
+    .rooms{
+        margin-left: -2.5%;
+    }
 `
 // 'Products', 'Rooms', 'New at IKEA', 'All offers'
 const ProductsBar = () => {
   return (
     <OptionsDiv>
-        <p>Products</p>
-        <p>Rooms</p>
+        <p className='ProdSidebar'>
+            <ProductSideBar/>
+            </p>
+        <p className='rooms'>Rooms</p>
         <p>New at IKEA</p>
         <p>All offers</p>
     </OptionsDiv>

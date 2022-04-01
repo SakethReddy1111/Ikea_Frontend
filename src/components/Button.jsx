@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Btn = styled.button`
+export  const Button = styled.button`
     display: inline-block;
     color: #fff;
     padding: 0.75rem 1.25rem 0.75rem 1.25rem;
@@ -12,10 +12,10 @@ const Btn = styled.button`
     background-color: #000;
 `
 
-function Button  ({children}){
-    return (
-        <Btn>{children}</Btn>
-    )
-}
+// function Button  ({children}){
+//     return (
+//         <Btn>{children}</Btn>
+//     )
+// }
 
-export default Button
+// export default Button

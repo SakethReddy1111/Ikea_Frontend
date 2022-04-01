@@ -7,7 +7,7 @@ import { IoIosGlobe } from "react-icons/io";
 
 import './Footer.css';
 import FooterColumns from "./FooterColumns";
-import Button from "./Button";
+import {Button} from "./Button";
 
 
 const Footer = () =>{
