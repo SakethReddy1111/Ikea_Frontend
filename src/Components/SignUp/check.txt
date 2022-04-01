@@ -1,0 +1,304 @@
+ {/* Radio Group */}
+          {/* <EachFieldDiv style={{ height: "auto", color: "#231F20" }}>
+            <FormControl>
+              <h4>
+                Become a member of IKEA Family today. Did we <br /> mention it's
+                free to join?
+              </h4>
+              {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
+          {/* <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="yes"
+                name="radio-buttons-group"
+              > */}
+          {/* <FormControlLabel
+                  value="yes"
+                  control={<Radio />}
+                  label="Yes, I want to enjoy rewards, discounts and a lot more!"
+                    InputLabelProps={{ style: { fontSize: 10 } }}
+                    InputProps={{ style: { fontSize: 40 } }}
+                /> */}
+          {/* <FormControlLabel value="no" control={<Radio />} label="Male" /> */}
+          {/* <FormControlLabel */}
+          {/* //       value="other"
+            //       control={<Radio />}
+            //       label="No thanks, I just want to create an IKEA account today. Maybe another day. "
+            //     /> */}
+          {/* //   </RadioGroup>
+            // </FormControl>
+        //   </EachFieldDiv> */}
+          {/* first name */}
+          {/* <FormControl
+            fullWidth
+            variant="standard"
+            style={{ marginTop: "25px" }}
+          > */}
+          {/* <EachFieldDiv>
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                First Name
+              </InputLabel>
+              <Input
+                id="firstname"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+              />
+            </EachFieldDiv>
+            <EachFieldDiv>
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                Surname
+              </InputLabel>
+              <Input
+                id="surname"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+              />
+            </EachFieldDiv>
+          </FormControl> */}
+          {/* last name */}
+          {/* <EachFieldDiv>
+            <FormControl
+              fullWidth
+              variant="standard"
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                Surname
+              </InputLabel>
+              <Input
+                id="surname"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+              />
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* mobile */}
+          {/* <EachFieldDiv>
+            <FormControl
+              fullWidth
+              variant="standard"
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel htmlFor="standard-adornment-amount">
+                Mobile
+              </InputLabel>
+              <Input
+                id="mobile"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+                startAdornment={
+                  <InputAdornment position="start">+91</InputAdornment>
+                }
+              />
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* Birthdate  DD--MM--YYYY*/}
+          {/* <EachFieldDiv>
+            <FormControl
+              fullWidth
+              variant="standard"
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                Birthdate
+              </InputLabel>
+              <Input
+                id="birthdate"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+                placeholder="DD-MM-YYYY"
+                // value={values.amount}
+                // onChange={handleChange("amount")}
+              />
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* Gender Dropdown */}
+          {/* <EachFieldDiv>
+            <FormControl
+              variant="standard"
+              sx={{ minWidth: 350 }}
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel id="demo-simple-select-standard-label">
+                Gender
+              </InputLabel>
+              <Select
+                id="gender"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+                label="Gender"
+              >
+                <MenuItem value={"male"}>Male</MenuItem>
+                <MenuItem value={"female"}>Female</MenuItem>
+              </Select>
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* postcode */}
+          {/* <EachFieldDiv>
+            <FormControl
+              fullWidth
+              variant="standard"
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                Postcode
+              </InputLabel>
+              <Input
+                id="postCode"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+              />
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* Preferred Store Dropdown */}
+          {/* <EachFieldDiv>
+            <FormControl
+              variant="standard"
+              sx={{ minWidth: 350 }}
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel id="demo-simple-select-standard-label">
+                Preferred Store
+              </InputLabel>
+              <Select
+                // labelId="demo-simple-select-standard-label"
+                // id="demo-simple-select-standard"
+                //   value={age}
+                //   onChange={handleChange}
+                label="store"
+              >
+                <MenuItem value={"hydera"}>Hyderabad</MenuItem>
+                <MenuItem value={"female"}>Navi Mumbai</MenuItem>
+                <MenuItem value={"female"}>Online Store</MenuItem>
+                <MenuItem value={"female"}>Worli</MenuItem>
+              </Select>
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* email */}
+          {/* <EachFieldDiv>
+            <FormControl
+              fullWidth
+              variant="standard"
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                Email(username)
+              </InputLabel>
+              <Input
+                id="email"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+              />
+            </FormControl>
+          </EachFieldDiv> */}
+          {/* password */}
+          {/* <EachFieldDiv>
+            <FormControl
+              fullWidth
+              variant="standard"
+              style={{ marginTop: "25px" }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ color: "grey", fontSize: "15px" }}
+              >
+                Password
+              </InputLabel>
+              <Input
+                id="password"
+                // value={values.amount}
+                onChange={(e) => handleChange(e)}
+              />
+            </FormControl>
+          </EachFieldDiv> */}
+
+          {/* <EachFieldDiv style={{ height: "auto", color: "#231F20" }}>
+            <FormControlLabel
+              label="I would like to receive news, tips and marketing offers from IKEA."
+              control={
+                <Checkbox
+                // checked={checked[0] && checked[1]}
+                // indeterminate={checked[0] !== checked[1]}
+                // onChange={handleChange1}
+                />
+              }
+            />
+            {children}
+          </EachFieldDiv> */}
+          {/* <EachFieldDiv>
+            <div style={{ margin: "auto" }}>
+              <SubButton onClick={() => handleSubmit()}>
+                Create Profile
+              </SubButton>
+            </div>
+          </EachFieldDiv> */}
+          </SubRightDiv>
+
+
+  
+const SubRightDiv = styled.div`
+  border: 1px solid red;
+  width: 70%;
+  height: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+`;
+const EachFieldDiv = styled.div`
+  border: 1px solid blue;
+  margin: 10px;
+  width: 100%;
+  height: 10%;
+  /* margin-left: 20%; */
+`;
+
+const SubButton = styled.button`
+  background-color: black;
+  width: 50%;
+  height: 50px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-left: 24%;
+`;
+
+ const children = (
+    <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
+      <FormControlLabel label="Via email" control={<Checkbox />} />
+      <FormControlLabel label="Via SMS" control={<Checkbox />} />
+      <FormControlLabel label="Via direct mail" control={<Checkbox />} />
+    </Box>
+  );
+
+
+  // import TextField from "@material-ui/core/TextField";
+// import IconButton from "@mui/material/IconButton";
+import FormControl from "@mui/material/FormControl";
+import InputAdornment from "@mui/material/InputAdornment";
+import Input from "@mui/material/Input";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Box from "@mui/material/Box";
