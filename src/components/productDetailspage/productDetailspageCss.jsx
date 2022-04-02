@@ -29,8 +29,8 @@ export const Wrapper = styled.div`
     position: relative;
   }
   #rigth > div {
-    position: fixed;
-    width: 26.4%;
+    position: absolute;
+    rigth: 0;
   }
   #title {
     display: flex;

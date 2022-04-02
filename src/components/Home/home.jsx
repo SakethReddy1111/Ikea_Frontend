@@ -5,8 +5,30 @@ import CropLandscapeOutlinedIcon from "@mui/icons-material/CropLandscapeOutlined
 import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";
 import { Example } from "../carousel/carousel";
 import { items } from "./homecarouselContent";
+import { useEffect, useState } from "react";
+import ProductCard from "../Products/ProductCard";
+
+import axios from "axios";
+import styled from "styled-components";
+
+const MainDiv = styled.div`
+  width: 87%;
+  margin-left: 9%;
+  margin-top: 4%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 35px;
+`;
 
 export const Home = () => {
+  const [prods, setProds] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:8000/products").then((res) => {
+      setProds(res.data.slice(0, 4));
+    });
+  }, []);
+
   return (
     <Wrapper>
       <div id="lander">
@@ -145,6 +167,14 @@ export const Home = () => {
       <hr />
       <div id="ikeaFamily">
         <h2>IKEA Family offers</h2>
+
+        <div>
+          <MainDiv>
+            {prods.map((el) => (
+              <ProductCard key={el.id} elem={el} />
+            ))}
+          </MainDiv>
+        </div>
       </div>
       <hr />
       <div id="offers">

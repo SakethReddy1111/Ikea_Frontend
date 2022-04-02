@@ -5,6 +5,18 @@ import StoreMallDirectoryIcon from "@mui/icons-material/StoreMallDirectory";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ProductCard from "../Products/ProductCard";
+import styled from "styled-components";
+
+const MainDiv = styled.div`
+  width: 87%;
+  margin-left: 9%;
+  margin-top: 4%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 35px;
+`;
 
 export const ProductDetails = () => {
   const [but, setBut] = useState(true);
@@ -22,6 +34,8 @@ export const ProductDetails = () => {
     img2: "",
   });
 
+  const [prods, setProds] = useState([]);
+
   useEffect(() => {
     axios
       .get(`http://localhost:8000/products/${id}`)
@@ -31,7 +45,10 @@ export const ProductDetails = () => {
       .catch((er) => {
         window.location.href = "/*";
       });
-  }, []);
+    axios.get("http://localhost:8000/products").then((res) => {
+      setProds(res.data.slice(0, 4));
+    });
+  }, [id]);
 
   const handleCart = () => {
     const temp = JSON.parse(localStorage.getItem("IkeaCart")) || [];
@@ -135,7 +152,13 @@ export const ProductDetails = () => {
       </div>
       <div>
         <h2>You migth like</h2>
-        <div></div>
+        <div>
+          <MainDiv>
+            {prods.map((el) => (
+              <ProductCard key={el.id} elem={el} />
+            ))}
+          </MainDiv>
+        </div>
       </div>
     </Wrapper>
   );

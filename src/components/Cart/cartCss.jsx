@@ -88,7 +88,7 @@ export const Wrapper = styled.div`
     margin-bottom: 40px;
   }
   .class502 {
-    border: 1px solid;
+    border: 1px solid gray;
     padding: 10px;
     width: 40%;
     color: white;
