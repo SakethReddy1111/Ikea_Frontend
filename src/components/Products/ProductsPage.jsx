@@ -8,12 +8,12 @@ import SortBar from '../Sorting/SortBar'
 const MainDiv = styled.div`
     width: 87%;
     margin-left:9% ;
-    margin-top: 2%;
+    margin-top: 4%;
     height: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 35px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 `
 const ProductsPage = () => {
 
