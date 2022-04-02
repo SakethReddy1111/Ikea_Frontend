@@ -168,7 +168,7 @@ const SortBar = ({products,set}) => {
 
       
       const getData = () =>{
-        axios.get("http://localhost:8000/products").then((res)=>{
+        axios.get("https://ikea-backend-u5.herokuapp.com/products").then((res)=>{
             console.log(res.data)
             setAllProducts([...res.data])
         });

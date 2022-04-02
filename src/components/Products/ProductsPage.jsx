@@ -20,7 +20,7 @@ const ProductsPage = () => {
     const [products,setProducts] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8000/products").then((res)=>{
+        axios.get("https://ikea-backend-u5.herokuapp.com/products").then((res)=>{
             console.log(res.data)
             setProducts([...res.data])
         });
