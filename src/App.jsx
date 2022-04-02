@@ -20,7 +20,7 @@ function App() {
       <ProductsBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/productspage" element={<ProductsPage />} />
+        <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
