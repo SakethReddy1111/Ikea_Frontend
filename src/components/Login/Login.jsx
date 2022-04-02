@@ -8,6 +8,7 @@ export const Login = () => {
   const [auth, setAuth] = useState(false);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     getLocalToken();
   });
@@ -43,13 +44,18 @@ export const Login = () => {
           console.log("No");
         } else {
           console.log("Yes");
+          console.log(data);
           console.log(data.token);
           localStorage.setItem(
             "ikeaLogin",
-            JSON.stringify({ token: data.token, status: true })
+            JSON.stringify({
+              userName: data.item.firstName,
+              token: data.token,
+              status: true,
+            })
           );
           //   window.location.reload();
-          navigate(`/`);
+          window.location.href = "/";
         }
       })
       .catch((e) => console.log(e));
@@ -61,12 +67,12 @@ export const Login = () => {
         <div className="leftDiv">
           <div className="logo">
             <div className="icon">
-              <AiOutlineArrowLeft
+              {/* <AiOutlineArrowLeft
                 style={{ fontSize: "28px", color: "white", margin: 12 }}
-              />
+              /> */}
             </div>
             <div className="logoImage">
-              <img
+              {/* <img
                 src="https://in.accounts.ikea.com/resources/static/logo.svg"
                 alt=""
                 style={{
@@ -75,7 +81,7 @@ export const Login = () => {
                   objectFit: "contain",
                   marginLeft: 10,
                 }}
-              />
+              /> */}
             </div>
           </div>
           <div className="midSection">

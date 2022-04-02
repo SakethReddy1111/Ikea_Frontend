@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const LoginWrapper = styled.div`
   .mainDiv {
+    width: 80%;
+    margin: auto;
     /* border: 1px solid red; */
     height: 750px;
     display: flex;
@@ -9,14 +11,14 @@ export const LoginWrapper = styled.div`
   .leftDiv {
     /* border: 1px solid blue; */
     height: auto;
-    width: 40%;
+    width: 50%;
     background-color: #0058a3;
   }
 
   .rightDiv {
     /* border: 1px solid red; */
     height: auto;
-    width: 35%;
+    width: 50%;
   }
 
   .logo {
