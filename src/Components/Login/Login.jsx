@@ -2,12 +2,13 @@ import { LoginWrapper } from "./LoginWrapper";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Home } from "../Home/Home";
 
 export const Login = () => {
   const [auth, setAuth] = useState(false);
 
+  const navigate = useNavigate();
   useEffect(() => {
     getLocalToken();
   });
@@ -18,7 +19,7 @@ export const Login = () => {
   });
 
   const getLocalToken = () => {
-    const token = JSON.parse(localStorage.getItem("ikeaLogin"));
+    const token = JSON.parse(localStorage.getItem("ikeaLogin")) || "";
     if (token.token) {
       setAuth(true);
     }
@@ -36,7 +37,7 @@ export const Login = () => {
     e.preventDefault();
 
     axios
-      .post(`http://localhost:8000/user/login`, form)
+      .post(`https://ikea-backend-u5.herokuapp.com/user/login`, form)
       .then(({ data }) => {
         if (!data.token) {
           console.log("No");
@@ -48,15 +49,12 @@ export const Login = () => {
             JSON.stringify({ token: data.token, status: true })
           );
           //   window.location.reload();
-          reload();
+          navigate(`/`);
         }
       })
       .catch((e) => console.log(e));
   };
 
-  const reload = () => {
-    window.location.reload();
-  };
   return auth === true ? (
     <Home />
   ) : (

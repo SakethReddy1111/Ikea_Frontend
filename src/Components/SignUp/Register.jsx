@@ -1,9 +1,12 @@
 // import styled from "styled-components";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Login } from "../Login/Login";
 import { RegisterWrapper } from "./RegisterWarapper";
 
 export const Register = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     firstName: "",
     surname: "",
@@ -24,11 +27,21 @@ export const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post(`http://localhost:8000/user/register`, form).then(() => {
-      alert(`Congratulations! ${form.firstName} your account has been created`);
-      console.log(form);
-    });
+    axios
+      .post(`https://ikea-backend-u5.herokuapp.com/user/register`, form)
+      .then(() => {
+        alert(
+          `Congratulations! ${form.firstName} your account has been created`
+        );
+        console.log(form);
+        changeSign();
+      });
   };
+
+  const changeSign = () => {
+    navigate(`/login`);
+  };
+
   return (
     <RegisterWrapper>
       <div className="leftDiv">
@@ -217,6 +230,7 @@ export const Register = () => {
                 className="selectTag"
                 onChange={(event) => handleChange(event)}
               >
+                <option value="">select</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
@@ -240,7 +254,7 @@ export const Register = () => {
           <br />
           <div className="formText">
             <div className="labelDiv">
-              <label htmlFor="">Gender: </label>
+              <label htmlFor="">Preferred Store: </label>
             </div>
             <div className="inputDiv">
               <select

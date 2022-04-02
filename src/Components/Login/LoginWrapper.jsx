@@ -2,42 +2,42 @@ import styled from "styled-components";
 
 export const LoginWrapper = styled.div`
   .mainDiv {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 750px;
     display: flex;
   }
   .leftDiv {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: auto;
     width: 40%;
     background-color: #0058a3;
   }
 
   .rightDiv {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: auto;
     width: 35%;
   }
 
   .logo {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     height: 7%;
     display: flex;
   }
   .icon {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 10%;
     height: 100%;
   }
 
   .logoImage {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 80%;
     margin-left: 9%;
     height: 100%;
   }
   .midSection {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin-top: 25%;
     width: 60%;
     height: 300px;
@@ -45,7 +45,7 @@ export const LoginWrapper = styled.div`
   }
 
   .bottom {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     height: 80px;
     margin-top: 20%;
   }
@@ -53,7 +53,7 @@ export const LoginWrapper = styled.div`
   //form Div
 
   .formDiv {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 320px;
     width: 80%;
     margin: auto;
@@ -73,7 +73,7 @@ export const LoginWrapper = styled.div`
   }
 
   .signUpDiv {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 80%;
     margin: auto;
     height: 25%;

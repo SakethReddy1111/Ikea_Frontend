@@ -1,9 +1,7 @@
 import { Routes, Route } from "react-router";
 import { AddProduct } from "../Components/AddProducts/AddProduct";
 import { Login } from "../Components/Login/Login";
-import { LoginWrapper } from "../Components/Login/LoginWrapper";
 import { Register } from "../Components/SignUp/Register";
-import { SignUp } from "../Components/SignUp/Signup";
 
 export const AllRoutes = () => {
   return (
