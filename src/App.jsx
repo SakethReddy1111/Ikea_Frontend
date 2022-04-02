@@ -11,6 +11,8 @@ import PrimarySearchAppBar from "./components/header/PrimarySearchAppBar";
 
 import ProductsPage from "./components/Products/ProductsPage";
 import ProductsBar from "./components/header/ProductsBar";
+import { Login } from "./components/Login/Login";
+import { Register } from "./components/SignUp/Register";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

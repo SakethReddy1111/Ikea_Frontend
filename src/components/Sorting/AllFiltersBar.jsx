@@ -3,19 +3,8 @@ import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import List from "@mui/material/List";
 import styled from "styled-components";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Button } from "../footer/Button";
 import { Divider } from "@mui/material";
-
-const Wrapper = styled.div`
-  height: 30px;
-  width: 50px;
-  /* border: 1px solid black; */
-  margin-top: -17px;
-  position: fixed;
-  margin-right: 25px;
-`;
 
 const TextDiv = styled.div`
   font-size: large;
@@ -27,25 +16,7 @@ const TextDiv = styled.div`
     text-decoration: underline;
   }
 `;
-const TextDiv2 = styled.div`
-  font-size: small;
-  font-weight: bold;
-  text-align: left;
-  margin-top: 20px;
-  padding-left: 70px;
-  p:hover {
-    text-decoration: underline;
-  }
-`;
-const TextDiv3 = styled.div`
-  font-weight: normal;
-  text-align: left;
-  margin-top: 0px;
-  padding-left: 70px;
-  p:hover {
-    text-decoration: underline;
-  }
-`;
+
 const Logo = styled.div`
   width: 45%;
   height: 60px;

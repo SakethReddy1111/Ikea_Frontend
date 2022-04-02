@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button } from "../footer/Button";
 
-import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import AllFiltersBar from "./AllFiltersBar";
 import axios from "axios";
 

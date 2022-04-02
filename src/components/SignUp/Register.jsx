@@ -1,8 +1,7 @@
 // import styled from "styled-components";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Login } from "../Login/Login";
 import { RegisterWrapper } from "./RegisterWarapper";
 
 export const Register = () => {

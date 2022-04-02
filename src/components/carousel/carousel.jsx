@@ -31,7 +31,6 @@ export function Example({ items }) {
 }
 
 export function Item({ src }) {
-  console.log(src);
   return (
     <Paper className="items">
       <img src={src.src} alt="" width={"100%"} height="100%" />

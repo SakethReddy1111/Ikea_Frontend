@@ -3,7 +3,6 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { Home } from "../Home/Home";
 
 export const Login = () => {
   const [auth, setAuth] = useState(false);
@@ -22,6 +21,7 @@ export const Login = () => {
     const token = JSON.parse(localStorage.getItem("ikeaLogin")) || "";
     if (token.token) {
       setAuth(true);
+      window.location.href = "/";
     }
   };
 
@@ -55,9 +55,7 @@ export const Login = () => {
       .catch((e) => console.log(e));
   };
 
-  return auth === true ? (
-    <Home />
-  ) : (
+  return (
     <LoginWrapper>
       <div className="mainDiv">
         <div className="leftDiv">
