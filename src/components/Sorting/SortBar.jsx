@@ -3,6 +3,8 @@ import styled from "styled-components"
 import {Button} from '../Button'
 import { IoMdArrowDropdown,IoMdArrowDropup } from "react-icons/io";
 import AllFiltersBar from "./AllFiltersBar"
+import axios from "axios"
+
 
 const Main = styled.div`
     width:87%;
@@ -158,90 +160,105 @@ const SortBar = ({products,set}) => {
         
       }
 
+      const [allProducts,setAllProducts] = useState([])
+
+      useEffect(()=>{
+        getData()
+      },[])
+
+      
+      const getData = () =>{
+        axios.get("http://localhost:8000/products").then((res)=>{
+            console.log(res.data)
+            setAllProducts([...res.data])
+        });
+      }
+
       const byFurniture = ()=>{
-          let arr = [...products]
+          let arr = [...allProducts]
           let num = "6242bb1902720e2ee52e6313";
           arr = arr.filter((el)=>{
-            return  el.category === num
+            return  el.category._id  === num
         })
             set([...arr]);
       }
 
       const byKitchen = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6242f5a5ae8ab4704cf4714a";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
     const byBeds = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243047ebbf6fd02e5be7655";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
     const byLighting = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0f763533e10664060bb";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id === num
       })
           set([...arr]);
     }
 
     const byWorking = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0b763533e10664060b1";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
 
     const byTextile = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0c063533e10664060b3";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
+      console.log(arr)
           set([...arr]);
     }
 
     const byDecoration = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0c863533e10664060b5";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
 
     const byBathroom = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0cf63533e10664060b7";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
 
     const byOutdoor = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0e863533e10664060b9";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
 
     const byBaby = ()=>{
-        let arr = [...products]
+        let arr = [...allProducts]
         let num = "6243d0f763533e10664060bb";
         arr = arr.filter((el)=>{
-          return  el.category === num
+          return  el.category._id  === num
       })
           set([...arr]);
     }
