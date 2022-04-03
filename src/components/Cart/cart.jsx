@@ -228,17 +228,21 @@ export const Cart = () => {
           <div className="allCart">
             {cart.map((el, i) => {
               return (
-                <div
-                  key={i}
-                  className="cartItem"
-                  onClick={() => {
-                    navigate(`/products/${el._id}`);
-                  }}
-                >
-                  <div className="imgDiv">
+                <div key={i} className="cartItem">
+                  <div
+                    className="imgDiv"
+                    onClick={() => {
+                      navigate(`/products/${el._id}`);
+                    }}
+                  >
                     <img src={el.img1} alt="" width={"100%"} heigth="80%" />
                   </div>
-                  <div className="cartTitle">
+                  <div
+                    className="cartTitle"
+                    onClick={() => {
+                      navigate(`/products/${el._id}`);
+                    }}
+                  >
                     <h3>{el.title}</h3>
                     <p>{el.package}</p>
                   </div>
