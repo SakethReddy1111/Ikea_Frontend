@@ -55,6 +55,13 @@ export const ProductDetails = () => {
   }, [id]);
 
   const handleCart = () => {
+    let bad = localStorage.getItem("ikeaLogin");
+
+    if (!bad) {
+      alert("please Login to proceed further !");
+      navigate("/login");
+      return;
+    }
     const temp = JSON.parse(localStorage.getItem("IkeaCart")) || [];
 
     let her = item;
