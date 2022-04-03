@@ -24,7 +24,7 @@ const MainDiv = styled.div`
 export const Home = () => {
   const [prods, setProds] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8000/products").then((res) => {
+    axios.get("https://ikea-backend-u5.herokuapp.com/products").then((res) => {
       setProds(res.data.slice(0, 4));
     });
   }, []);

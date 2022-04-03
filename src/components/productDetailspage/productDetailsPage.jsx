@@ -49,7 +49,7 @@ export const ProductDetails = () => {
       .catch((er) => {
         navigate("/*");
       });
-    axios.get("https://ikea-backend-u5.herokuapp.com/").then((res) => {
+    axios.get("https://ikea-backend-u5.herokuapp.com/products").then((res) => {
       setProds(res.data.slice(0, 4));
     });
   }, [id]);
