@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "../Products/ProductCard";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const MainDiv = styled.div`
@@ -21,7 +22,9 @@ const MainDiv = styled.div`
 export const ProductDetails = () => {
   const [but, setBut] = useState(true);
   const { id } = useParams();
-  //6245bfeb4697b099e1ac9b7f
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+
   const [item, setItem] = useState({
     _id: "",
     title: "",
@@ -38,14 +41,15 @@ export const ProductDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/products/${id}`)
+      .get(`https://ikea-backend-u5.herokuapp.com/products/${id}`)
       .then((res) => {
         setItem(res.data);
+        setLoading(false);
       })
       .catch((er) => {
-        window.location.href = "/*";
+        navigate("/*");
       });
-    axios.get("http://localhost:8000/products").then((res) => {
+    axios.get("https://ikea-backend-u5.herokuapp.com/").then((res) => {
       setProds(res.data.slice(0, 4));
     });
   }, [id]);
@@ -69,97 +73,116 @@ export const ProductDetails = () => {
         <span>{item.title} </span>
         <span>{item.package}</span>
       </p>
-      <div id="main">
-        <div id="left">
-          <div>
-            <div>
-              <img src={item.img1} alt="" width="100%" height="100%" />
-            </div>
+      {loading ? (
+        <div style={{ textAlign: "center" }}>
+          <video
+            class="http-status-message__ufo"
+            autoplay="autoplay"
+            loop="loop"
+            muted="muted"
+            playsinline="playsinline"
+          >
+            <source
+              src="https://media.istockphoto.com/videos/loading-circle-icon-animation-on-white-background-4k-video-loopable-video-id1302436594"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      ) : (
+        <>
+          <div id="main">
+            <div id="left">
+              <div>
+                <div>
+                  <img src={item.img1} alt="" width="100%" height="100%" />
+                </div>
 
-            {item.img2 ? (
-              <div>
-                {" "}
-                <img src={item.img2} alt="" width="100%" height="100%" />
+                {item.img2 ? (
+                  <div>
+                    {" "}
+                    <img src={item.img2} alt="" width="100%" height="100%" />
+                  </div>
+                ) : (
+                  ""
+                )}
+                {item.img3 ? (
+                  <div>
+                    {" "}
+                    <img src={item.img3} alt="" width="100%" height="100%" />
+                  </div>
+                ) : (
+                  ""
+                )}
+                {item.img4 ? (
+                  <div>
+                    {" "}
+                    <img src={item.img4} alt="" width="100%" height="100%" />
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
-            ) : (
-              ""
-            )}
-            {item.img3 ? (
+              <div>{item.description}</div>
+            </div>
+            <div id="rigth">
               <div>
-                {" "}
-                <img src={item.img3} alt="" width="100%" height="100%" />
+                <h2 id="title">
+                  <span>{item.title}</span>
+                  <span>
+                    <span className="class655">Rs.</span>
+                    {item.price}
+                  </span>
+                </h2>
+                <p className="packages">{item.package}</p>
+                <p className="packages">Price inclusive of all taxes</p>
+
+                <div>
+                  <span>Eligible for delivery?</span>
+                  <span className="eagle">____________</span>
+                  <span className="class321">Check</span>
+                </div>
+
+                {but ? (
+                  <div
+                    className="class302"
+                    onClick={(item) => {
+                      handleCart(item);
+                    }}
+                  >
+                    <ShoppingCartIcon className="iconCart" />
+                    <p>Add to cart</p>
+                  </div>
+                ) : (
+                  <div
+                    className="class302"
+                    onClick={() => {
+                      handleCart();
+                    }}
+                  >
+                    <DoneIcon className="iconCart" />
+                    <p>Added to cart</p>
+                  </div>
+                )}
+
+                <div id="id702">
+                  <StoreMallDirectoryIcon className="iconStore" />
+                  <a href="/">Check in-store stock</a>
+                </div>
               </div>
-            ) : (
-              ""
-            )}
-            {item.img4 ? (
-              <div>
-                {" "}
-                <img src={item.img4} alt="" width="100%" height="100%" />
-              </div>
-            ) : (
-              ""
-            )}
+            </div>
           </div>
-          <div>{item.description}</div>
-        </div>
-        <div id="rigth">
           <div>
-            <h2 id="title">
-              <span>{item.title}</span>
-              <span>
-                <span className="class655">Rs.</span>
-                {item.price}
-              </span>
-            </h2>
-            <p className="packages">{item.package}</p>
-            <p className="packages">Price inclusive of all taxes</p>
-
+            <h2>You migth like</h2>
             <div>
-              <span>Eligible for delivery?</span>
-              <span className="eagle">____________</span>
-              <span className="class321">Check</span>
-            </div>
-
-            {but ? (
-              <div
-                className="class302"
-                onClick={(item) => {
-                  handleCart(item);
-                }}
-              >
-                <ShoppingCartIcon className="iconCart" />
-                <p>Add to cart</p>
-              </div>
-            ) : (
-              <div
-                className="class302"
-                onClick={() => {
-                  handleCart();
-                }}
-              >
-                <DoneIcon className="iconCart" />
-                <p>Added to cart</p>
-              </div>
-            )}
-
-            <div id="id702">
-              <StoreMallDirectoryIcon className="iconStore" />
-              <a href="/">Check in-store stock</a>
+              <MainDiv>
+                {prods.map((el) => (
+                  <ProductCard key={el.id} elem={el} />
+                ))}
+              </MainDiv>
             </div>
           </div>
-        </div>
-      </div>
-      <div>
-        <h2>You migth like</h2>
-        <div>
-          <MainDiv>
-            {prods.map((el) => (
-              <ProductCard key={el.id} elem={el} />
-            ))}
-          </MainDiv>
-        </div>
-      </div>
+        </>
+      )}
     </Wrapper>
   );
 };

@@ -4,6 +4,7 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import List from "@mui/material/List";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TextDiv = styled.div`
   font-size: xx-large;
@@ -45,6 +46,7 @@ const Logo = styled.div`
 `;
 
 export default function SwipeableTemporaryDrawer() {
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     left: false,
   });
@@ -78,7 +80,7 @@ export default function SwipeableTemporaryDrawer() {
       </Logo>
       <List
         onClick={() => {
-          window.location.href = "/products";
+          navigate("/products");
         }}
       >
         {["Products"].map((text, index) => (
@@ -90,7 +92,7 @@ export default function SwipeableTemporaryDrawer() {
       <List
         style={{ marginTop: "-30px" }}
         onClick={() => {
-          window.location.href = "/products";
+          navigate("/products");
         }}
       >
         {[
@@ -104,7 +106,7 @@ export default function SwipeableTemporaryDrawer() {
             button
             key={text}
             onClick={() => {
-              window.location.href = "/products";
+              navigate("/products");
             }}
           >
             <p>{text}</p>
@@ -131,7 +133,7 @@ export default function SwipeableTemporaryDrawer() {
             button
             key={text}
             onClick={() => {
-              window.location.href = "/products";
+              navigate("/products");
             }}
           >
             <Link

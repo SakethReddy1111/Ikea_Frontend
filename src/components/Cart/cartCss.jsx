@@ -28,8 +28,8 @@ export const Wrapper = styled.div`
     width: 55%;
     margin: auto;
     display: flex;
-    border-top: 1px dashed gray;
-    border-bottom: 1px dashed gray;
+    border-top: 1px dashed silver;
+    border-bottom: 1px dashed silver;
     justify-content: space-between;
   }
   .type {
@@ -37,9 +37,18 @@ export const Wrapper = styled.div`
     margin: auto;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .type > div {
+    width: 120px;
+    padding: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .type > div:hover {
+    background-color: whitesmoke;
   }
   #policy {
-    border-top: 1px solid gray;
+    border-top: 1px solid silver;
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -52,7 +61,7 @@ export const Wrapper = styled.div`
     display: flex;
     width: 33%;
     gap: 10px;
-    border: 1px solid gray;
+    border: 1px solid silver;
   }
   .terms {
     text-align: left;
@@ -88,7 +97,7 @@ export const Wrapper = styled.div`
     margin-bottom: 40px;
   }
   .class502 {
-    border: 1px solid gray;
+    border: 1px solid silver;
     padding: 10px;
     width: 40%;
     color: white;

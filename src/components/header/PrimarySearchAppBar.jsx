@@ -17,6 +17,7 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import "./PrimarySearchAppBar.css";
 import LeftSidebar from "./LeftSidebar";
 import RightSideBar from "./RightSideBar";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -145,6 +146,8 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -183,7 +186,7 @@ export default function PrimarySearchAppBar() {
             <div
               className="LogoDiv"
               onClick={() => {
-                window.location.href = "/";
+                navigate("/");
               }}
             >
               <img
@@ -223,7 +226,7 @@ export default function PrimarySearchAppBar() {
               // onClick={handleProfileMenuOpen}
               color="inherit"
               onClick={() => {
-                window.location.href = "/cart";
+                navigate("/cart");
               }}
             >
               <ShoppingBasketIcon />
