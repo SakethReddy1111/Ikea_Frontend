@@ -13,6 +13,7 @@ import ProductsPage from "./components/Products/ProductsPage";
 import ProductsBar from "./components/header/ProductsBar";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/SignUp/Register";
+import { Success } from "./components/Success/Success";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />

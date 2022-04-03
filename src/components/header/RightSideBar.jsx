@@ -6,6 +6,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const TextDiv3 = styled.div`
   font-weight: normal;
@@ -25,8 +26,8 @@ const LoginDiv = styled.div`
   border-bottom: 1px solid rgb(48, 118, 178);
   h1 {
     margin-top: 8%;
-    padding-left: 50px;
-    padding-right: 60%;
+    padding-left: 40px;
+    padding-right: 20%;
   }
 `;
 const Button = styled.button`
@@ -69,6 +70,24 @@ const RightSideBar = () => {
     right: false,
   });
 
+  const [user, setUser] = React.useState(false);
+
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    getName();
+  }, []);
+
+  const getName = () => {
+    const name = JSON.parse(localStorage.getItem("ikeaLogin")) || {};
+    // findUser(name.userName);
+    setUser(name.userName);
+  };
+
+  // const findUser = (name) => {
+  //   // console.log(name);
+  // };
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
@@ -89,13 +108,19 @@ const RightSideBar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <LoginDiv>
-        <h1>Hej,</h1>
+        <h1>{user ? user : "Hej"},</h1>
         <Button
           onClick={() => {
-            window.location.href = "/login";
+            if (user) {
+              localStorage.removeItem("ikeaLogin");
+              setUser(false);
+            } else {
+              // navigate("/login");
+              window.location.href = "/login";
+            }
           }}
         >
-          Login
+          {user ? "Logout" : "Login"}
         </Button>
       </LoginDiv>
       <Divider style={{ color: "rgb(48,118,178)" }} />

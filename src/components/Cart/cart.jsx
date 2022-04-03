@@ -7,12 +7,20 @@ import SettingsBackupRestoreIcon from "@mui/icons-material/SettingsBackupRestore
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteIcon from "@mui/icons-material/Delete";
+import useRazorpay from "react-razorpay";
+import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("IkeaCart")) || []
   );
+
+  const navigate = useNavigate();
+
+  const Razorpay = useRazorpay();
   const [total, setTotal] = useState(0);
+  const [pay, setPay] = useState(0);
+  const [orderId, setOrderId] = useState("");
 
   useEffect(() => {
     totalprice();
@@ -43,6 +51,7 @@ export const Cart = () => {
     }
 
     setTotal(sum);
+    setPay(sum * 100);
   };
 
   const handleChange = (i, v) => {
@@ -63,6 +72,137 @@ export const Cart = () => {
     temp.splice(i, 1);
 
     setCart(temp);
+  };
+
+  //Generate Order
+
+  const handlePayEvent = () => {
+    async function generateOrderId() {
+      try {
+        const res = await fetch(
+          "https://steve-madden.herokuapp.com/create/orderId",
+          {
+            method: "POST",
+            body: JSON.stringify({ amount: setTotal(pay) }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        let response = await res.json();
+        // console.log(response);
+        setOrderId(response.orderId);
+        console.log(orderId);
+        // document.getElementById("button").style.display = "block";
+        // $("button").show();
+      } catch (e) {
+        console.log("generateOrderId" + e);
+      }
+    }
+
+    generateOrderId();
+
+    //endof Pay Event
+    const saveFn = function (e) {
+      var options = {
+        key: "rzp_test_VsoO9BEK2erzgZ", // Enter the Key ID generated from the Dashboard
+        amount: pay, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "Ikea Clone Project Masai",
+        description: "Test Transaction",
+        image:
+          "https://www.ikea.com/in/en/static/ikea-logo.f7d9229f806b59ec64cb.svg",
+        order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the previous step
+        handler: function (response) {
+          // response = JSON.stringify(response);
+          console.log("hello response" + response);
+          // alert(response.razorpay_payment_id);
+          navigate(`/success`);
+
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
+          async function saveOrder(response) {
+            try {
+              const res = await fetch(
+                "https://steve-madden.herokuapp.com/saveOrderDetails",
+                {
+                  method: "POST",
+                  body: JSON.stringify(response),
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                }
+              );
+
+              let saveDetail = await res.json();
+              console.log(saveDetail);
+              // window.location.href = "success.html";
+            } catch (e) {
+              console.log("saveOrderErr" + e);
+            }
+          }
+          saveOrder();
+
+          // var settings = {
+          //   url: "http://localhost:7896/api/payment/verify",
+          //   method: "POST",
+          //   timeout: 0,
+          //   headers: {
+          //     "Content-Type": "application/json",
+          //   },
+          //   data: JSON.stringify({ response }),
+          // };
+
+          // $.ajax(settings).done(function (response) {
+          //   console.log(JSON.stringify(response));
+          // });
+          const settings = async (response) => {
+            try {
+              const res = await fetch(
+                "https://steve-madden.herokuapp.com/api/payment/verify",
+                {
+                  method: "POST",
+                  body: JSON.stringify(response),
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                }
+              );
+
+              let verifyDetail = await res.json();
+              console.log(verifyDetail);
+              // $.ajax(settings).done(function (response) {
+              //     console.log(JSON.stringify(response));
+              //   });
+            } catch (e) {
+              console.log("saveOrderErr" + e);
+            }
+          };
+          settings();
+        },
+
+        theme: {
+          color: "#343434",
+        },
+      };
+
+      var rzp1 = new Razorpay(options);
+      rzp1.on("payment.failed", function (response) {
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+      });
+
+      rzp1.open();
+      // e.preventDefault();
+    };
+
+    saveFn();
   };
 
   return (
@@ -137,11 +277,11 @@ export const Cart = () => {
             <h3>How would you like to receive your order?</h3>
           </div>
           <div className="type">
-            <div>
+            <div onClick={() => handlePayEvent()}>
               <LocalShippingIcon />
               <p>Home delivery</p>
             </div>
-            <div>
+            <div onClick={() => handlePayEvent()}>
               <StoreIcon />
               <p>Click & collect</p>
             </div>

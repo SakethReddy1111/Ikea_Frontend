@@ -5,7 +5,7 @@ export const RegisterWrapper = styled.div`
   height: auto;
   width: 92%;
   margin: auto;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   display: flex;
 
   .leftDiv {
