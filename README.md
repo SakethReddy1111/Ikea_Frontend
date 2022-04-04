@@ -1,9 +1,9 @@
-<h1># Home_Depot_Clone</h1>
+<h1># Ikea_Clone</h1>
 
-<a href = "https://home-depot-clone.herokuapp.com/index" ><img src ="https://www.reviewsxp.com/blog/wp-content/uploads/2020/05/Home-Depot.jpg"/></a>
+<a href = "https://ikea-frontend-beta.vercel.app/" ><img src ="https://lh3.googleusercontent.com/bHLVkg4-0kqG_HeOo5bLvL26N3pRqTUjC5NO-TQDkPuT5r0_8YhoknSwHuVED5OwFdR6PrsbVqloqk51ii_62iHjvOJt7GD84N2CSAAwgs-tAvAM67t-TLskFKhJnM97Xf8dzStagQ=w2400"/></a>
 
 
-<h3>What is HomeDepot ?</h3>
+<h3>What is Ikea Store ?</h3>
 
 <p>IKEA is a multinational group of companies - founded in Sweden - that sells ready-to-assemble furniture, kitchen ware and home accessories. IKEA is the biggest furniture company in the world, with over 400 stores worldwide, selling affordable household items to millions of customers.</p>
 
@@ -13,7 +13,7 @@
 
 <h3>Description</h3>
 
-<p>Built for construct week in unit5 at Masai School to showCase what we learnt till now. Implemented using Backend. Only for educational purpose.</p>
+<p>Built for construct week in unit5 at Masai School to showCase what we learnt till now. Implemented using Backend & React. Only for educational purpose.</p>
 
 
 <h3>Tech Stacks : </h3>
