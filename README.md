@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+<h1># Home_Depot_Clone</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href = "https://home-depot-clone.herokuapp.com/index" ><img src ="https://www.reviewsxp.com/blog/wp-content/uploads/2020/05/Home-Depot.jpg"/></a>
 
-## Available Scripts
 
-In the project directory, you can run:
+<h3>What is HomeDepot ?</h3>
 
-### `npm start`
+<p>IKEA is a multinational group of companies - founded in Sweden - that sells ready-to-assemble furniture, kitchen ware and home accessories. IKEA is the biggest furniture company in the world, with over 400 stores worldwide, selling affordable household items to millions of customers.</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>what is this for ? </h3>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>Its a ecommerce websitr for Ikea store's. IKEA is one of the best-known and most successful home furniture companies in the world. This Swedish company also sells a wide range of home accessories and interior design items. They are famous for their modern designs, eco-friendly products, low prices, and flat-pack furniture.</p>
 
-### `npm test`
+<h3>Description</h3>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>Built for construct week in unit5 at Masai School to showCase what we learnt till now. Implemented using Backend. Only for educational purpose.</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>Tech Stacks : </h3>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>React | Express | Mongodb | HTML | CSS | JAVASCRIPT | EJS</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h3>Build Process</h3>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p> You can visit the website we buit here "https://ikea-frontend-beta.vercel.app/" </p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<ul>
+  <li>Clone or download the repo</li>
+  <li><h3>npm run start</h3>to start the packages and run the website</li>
+  <li><h3>"http://localhost:3000/"</h3> (without quotes) copy paste this link in your browser</i>
+  
+  
+  </ul>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h3>Contributers</h3>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href = "https://github.com/SakethReddy1111"><img src = "https://avatars.githubusercontent.com/u/95850230?v=4" width=100px /></a>
+<a href = "https://github.com/vattsalbhatt"><img src = "https://avatars.githubusercontent.com/u/88322741?v=4"  width=100px /></a>
+<a href = "https://github.com/Dhiraj-Giri"><img src = "https://avatars.githubusercontent.com/u/96107673?v=4"  width=100px /></a>
